@@ -1,3 +1,4 @@
+
 FROM python:3.12
 
 WORKDIR /app
@@ -14,3 +15,7 @@ COPY ./requirements.txt ./app
 RUN pip install -r requirements.txt
 
 COPY ./entrypoint.sh /app/entrypoint.sh
+
+COPY . /app/
+
+ENTRYPOINT ["/app/entrypoint.sh"]

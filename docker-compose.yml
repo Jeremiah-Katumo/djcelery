@@ -1,6 +1,8 @@
+
 version: '4.31.1'
 
-service:
+services:
+
     django:
       container_name: django
       build: 
