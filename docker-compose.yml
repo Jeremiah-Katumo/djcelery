@@ -4,7 +4,7 @@ version: '4.32.0'
 services:
 
     redis: 
-      image: redis:7.0.11
+      image: redis:7.4-rc
 
     django:
       container_name: django
@@ -18,21 +18,21 @@ services:
       environment:
         - DEBUG=1
         - SECRET_KEY=082JDFS8848KHW38LF-233
-        - ALLOWED_HOSTS=localhost,127.0.0.1
+        - ALLOWED_HOSTS=localhost
       depends_on:
         - redis
 
     celery:
-      container_name: django
+      container_name: celery
       build: 
         context: ./djcelery
       volumes:
         - ./djcelery:/app/
       ports:
-        - 8001:8000
+        - 50001:5000
       environment:
         - DEBUG=1
         - SECRET_KEY=082JDFS8848KHW38LF-233
-        - ALLOWED_HOSTS=localhost,127.0.0.1
+        - ALLOWED_HOSTS=localhost
       depends_on:
         - redis
