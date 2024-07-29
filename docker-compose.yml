@@ -28,8 +28,6 @@ services:
         context: ./djcelery
       volumes:
         - ./djcelery:/app/
-      ports:
-        - 50001:5000
       environment:
         - DEBUG=1
         - SECRET_KEY=082JDFS8848KHW38LF-233
