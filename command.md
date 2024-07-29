@@ -4,4 +4,4 @@ http://0.0.0.0:8000/
 docker build -t <container_name> .
 docker-compose up -d --build
 ./manage.py startapp taskapp
-docker exec -it django /bin/sh
+docker exec -it django /bin/sh  // getting into django container
