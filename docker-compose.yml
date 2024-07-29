@@ -10,7 +10,7 @@ services:
       container_name: django
       build: 
         context: ./djcelery
-      command: py manage.py runserver 0.0.0.0:8000
+      command: python3 manage.py runserver 0.0.0.0:8000
       volumes:
         - ./djcelery:/app/
       ports:
@@ -18,7 +18,7 @@ services:
       environment:
         - DEBUG=1
         - SECRET_KEY=082JDFS8848KHW38LF-233
-        - ALLOWED_HOSTS=localhost
+        - ALLOWED_HOSTS=localhost,127.0.0.1
       depends_on:
         - redis
 
@@ -32,6 +32,6 @@ services:
       environment:
         - DEBUG=1
         - SECRET_KEY=082JDFS8848KHW38LF-233
-        - ALLOWED_HOSTS=localhost
+        - ALLOWED_HOSTS=localhost,127.0.0.1
       depends_on:
         - redis

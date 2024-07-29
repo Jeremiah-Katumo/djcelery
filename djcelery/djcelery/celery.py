@@ -7,7 +7,7 @@ app = Celery("djcelery")
 app.config_from_object("django.conf:settings", namespace="CELERY")
 
 @app.task
-def add_numbers(x, y):
+def add_numbers(x, ):
     return x + y
 
 app.autodiscover_tasks()
